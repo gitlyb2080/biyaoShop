@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/sweetalert.css" rel="stylesheet">
+<link href="css/application.css" rel="stylesheet">
+<title>付款</title>
+</head>
+<body>
+	<header>
+		<div class="headerbar">
+			<h1>在线付款</h1>
+			<a class="navbar-toggle" href="order.html">
+				<span class="icon-m_goback"></span>
+			</a>
+		</div>
+	</header>
+<section class="wrapper cart">
+	<div class="row celltel">
+		<div class="col-4 text-right">
+			<span class="icon-chengnuo"></span>
+		</div>
+		<div class="col-8">
+			<span class="purple">订单提交成功！马上付款~</span><br/>
+			请尽快完成支付
+		</div>
+	</div>
+	<div class="shelves">
+		<div class="row" style="padding:1rem 1rem; line-height:1.6rem;">
+			<label class="col-3 text-right">应付金额：</label><div class="col-9"><span class="vipcolor">￥8000</span></div>
+			<label class="col-3 text-right">收货信息：</label><div class="col-9">张三丰 &nbsp; 13300000000<br />上海市普陀区大渡河路098弄2-098</div>
+		</div>
+		<p class="tips tipssmall">请选择支付方式</p>
+		<div>
+			<div class="pay"><i class="payz" ></i>支付宝支付
+				<a class="fulldom"  data-type="popbox" data-href="alipay"></a>
+			</div>
+		</div>
+		<div>
+			<div class="pay"><i class="payu" ></i>微信支付
+				<a class="fulldom"   data-type="popbox" data-href="weichat"></a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--支付宝弹出框-->
+<section class="popbox" id="alipay">
+	<div class="fx_dl">
+			<div class="fwsm_t">支付宝支付</div>
+			<div class="text-center paybox">
+				<p>支付宝账号：29409020402000</p>
+				<div class="thumbnail">
+					<img src="http://fakeimg.pl/320x320/ccc/fff/?text=Qrcode" />
+				</div>
+				<span class="tipssmall">请付款到商家支付宝账户</span>
+			</div>
+			<div class="buttonzone">
+				<button class="btn btn-block" data-dismiss="popbox" >关闭</button>
+			</div>
+	</div>
+</section>
+
+<!--微信弹出框-->
+<section class="popbox" id="weichat">
+	<div class="fx_dl">
+			<div class="fwsm_t">微信支付</div>
+			<div class="text-center paybox">
+				<p>微信账号：29409020402000</p>
+				<div class="thumbnail">
+					<img src="http://fakeimg.pl/320x320/ccc/fff/?text=Qrcode" />
+				</div>
+				<span class="tipssmall">请添加商家微信并完成付款</span>
+			</div>
+			<div class="buttonzone">
+				<button class="btn btn-block" data-dismiss="popbox" >关闭</button>
+			</div>
+	</div>
+</section>
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/swipeSlide.min.js" type="text/javascript"></script>
+<script src="js/sweetalert.min.js" type="text/javascript"></script>
+<script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
+<script src="js/icheck.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/application.js" type="text/javascript"></script>
+<script>
+
+</script>
+</body>
+</html>

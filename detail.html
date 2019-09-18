@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/sweetalert.css" rel="stylesheet">
+<link href="css/application.css" rel="stylesheet">
+<title>详情</title>
+</head>
+<body>
+<header>
+	<div class="headerbar">
+		<h1>产品详情</h1>
+		<a class="navbar-toggle" href="index.html">
+			<span class="icon-m_goback"></span>
+		</a>
+	</div>
+</header>
+<div class="slide popslides">
+	<ul>
+		<li><img src="resource/img_2_800.jpg" /></li>
+		<li><img src="resource/img_3_800.jpg" /></li>
+	</ul>
+	<div class="dot">
+		<span></span>
+		<span></span>
+	</div>
+</div>
+<section class="dividezone">
+		<div class="row clearfix">
+			<div class="col-9">
+				<p><span class="prices">￥200</span>生产周期20天</p>
+				<h2>超级跑鞋G02989纽约</h2>
+			</div>
+			<div class="col-3 pull-right">
+				<a class="thumbnail thumbnailhome" href="shop.html"><span class="icon-home"></span>商家</a>
+			</div>
+		</div>
+		<div class="shelvestip"  data-type="popbox" data-href="servicedetail">
+			<span><span class="icon-chengnuo"></span>七天无忧退换</span>
+			<span><span class="icon-chengnuo"></span>先行赔付</span>
+			<span><span class="icon-chengnuo"></span>超时赔偿</span>
+			<span class="arrowicon"></span>
+		</div>
+</section>
+<section class="standard-list">
+	<div class="shelvestip">
+		<a class="arrowicon standardtext" data-type="popbox" data-href="category">已选择："XL","蓝色"</a>
+	</div>
+	<div class="shelvestip">
+		<a class="arrowicon" onClick="evaluatepage()" >商品评价（204）</a>
+	</div>
+</section>
+<section class="describe">
+	<div class="thumbnail">
+		<img src="resource/a120.jpg">
+		<img src="resource/a1220.jpg">
+		<img src="resource/a12220.jpg">
+		<img src="resource/a1266620.jpg">
+		<img src="resource/a125520.jpg">
+	</div>
+</section>
+<a class="backToTop icon-gotop" title="返回顶部"></a>
+
+<!--商品评价-->
+<div class="fixedpage evaluationpage">
+		<div class="headerbar">
+			<h1>评价</h1>
+			<a class="navbar-toggle" onClick="evaluatepage()">
+				<span class="icon-m_goback"></span>
+			</a>
+		</div>
+			<div class="lists">
+					<div class="evalute">
+						<div class="tags">
+							<span class="tagsheadimg"><span><img src="img/headimg.png" width="40"></span><i>133****38</i>评价</span>
+							<span class="time">2014-09-12</span>
+							<div class="rates">
+								<div class="star-score" data-value="4">
+									<i class="rated"></i><i class="rated"></i><i class="rated"></i><i class="rated"></i><i></i>
+								</div>
+							</div>
+						</div>
+						<p>颜色很正，评价内容，网购有风险，花钱要谨慎！</p>
+					</div>
+					<div class="evalute">
+						<div class="tags">
+							<span class="tagsheadimg"><span><img src="img/headimg.png" width="40"></span><i>133****38</i>评价</span>
+							<span class="time">2014-09-12</span>
+							<div class="rates">
+								<div class="star-score" data-value="3">
+									<i class="rated"></i><i class="rated"></i><i class="rated"></i><i></i><i></i>
+								</div>
+							</div>
+						</div>
+						<p>颜色很正，评价内容，网购有风险，花钱要谨慎！</p>
+					</div>
+					<div class="evalute">
+						<div class="tags">
+							<span class="tagsheadimg"><span><img src="img/headimg.png" width="40"></span><i>133****38</i>评价</span>
+							<span class="time">2014-09-12</span>
+							<div class="rates">
+								<div class="star-score" data-value="1">
+									<i class="rated"></i><i></i><i></i><i></i><i></i>
+								</div>
+							</div>
+						</div>
+						<p>颜色很正，评价内容，网购有风险，花钱要谨慎！</p>
+					</div>
+				</div>
+</div>
+
+
+<!--购物车弹出框-->
+<section class="popbox prebuy" id="shoppingcar">
+	<a class="close" data-dismiss="popbox">×</a>
+	<div class="shelves">
+		<div class="media clearfix">
+			<div class="media-left">
+				<img src="http://fakeimg.pl/120x120/eee/fff/?text=LOGO" />
+			</div>
+			<div class="media-body">
+				<h2 class="prices">￥229</h2>
+				<p>生产周期描述</p>
+			</div>
+		</div>
+		<div class="number clearfix">
+			购买数量：
+			<input id="amount" type="text" class="spinners" data-min="1" data-max="24" value="1" maxlength="4">
+		</div>
+		<div class="buttonzone">
+			<button class="btn btn-block" onClick="addcart()" data-dismiss="popbox" >确定</button>
+		</div>
+	</div>
+</section>
+
+<!--服务说明弹出框-->
+<section class="popbox" id="servicedetail">
+	<div class="fx_dl">
+			<div class="fwsm_t">服务说明</div>
+			<ul class="fwsm_d">
+				<li><div><span class="icon-chengnuo"></span><span class="f_t">7天无忧退换</span></div><div><span class="f_d">实物破损、不符、质量问题，退换货商家承担往返运费。</span></div></li>
+				<li><div><span class="icon-chengnuo"></span><span class="f_t">先行赔付</span></div><div><span class="f_d">争议可申诉，申诉成功，立即退款。</span></div></li>
+				<li><div><span class="icon-chengnuo"></span><span class="f_t">超时赔偿</span></div><div><span class="f_d">未按承诺时间发货，系统自动赔付（赔款金额为订单商品金额的30%，上限500元）。</span></div></li>
+				<li><div><span class="icon-chengnuo"></span><span class="f_t">顺丰包邮</span></div><div><span class="f_d">运费由商家承担</span></div></li>
+			</ul>
+			<br />
+			<div class="buttonzone">
+				<button class="btn btn-block" data-dismiss="popbox" >关闭</button>
+			</div>
+	</div>
+</section>
+
+<!--商品规格选择-->
+<section class="popbox prebuy" id="category">
+	<a class="close" data-dismiss="popbox">×</a>
+	<div class="shelves">
+		<div class="media clearfix">
+			<div class="media-left">
+				<img src="http://fakeimg.pl/120x120/eee/fff/?text=LOGO" />
+			</div>
+			<div class="media-body">
+				<h2 class="prices">￥229</h2>
+				<p>生产周期描述</p>
+			</div>
+		</div>
+		<div class="standard">
+			<p>分类信息：</p>
+			<div>
+				<input value="XL" type="radio" name="standard" checked />
+				<input value="L" type="radio" name="standard" />
+				<input value="S" type="radio" name="standard" />
+			</div>
+		</div>
+		<div class="standard">
+			<p>其他分类：</p>
+			<div>
+				<input value="蓝色" type="radio" name="standard2" checked />
+				<input value="绿色" type="radio" name="standard2" />
+				<input value="黑色" type="radio" name="standard2" />
+			</div>
+		</div>
+		<div >
+			<br /><br />
+		</div>
+		<div class="buttonzone">
+			<button class="btn btn-block" onClick="standard()"  data-dismiss="popbox" >确定</button>
+		</div>
+	</div>
+</section>
+<!--规格选择结束-->
+
+<footer>
+	<div class="footheight"></div>
+	<div class="row footbar">
+		<div class="col-12 text-center">
+			<div class="square">
+				<a href="tel:4008000000"><span class="icon-phone"></span>客服</a>
+			</div>
+			<div class="square">
+				<a  href="cart.html"><span class="icon-cart"></span>购物车<i class="numberpro"></i></a>
+			</div>
+			<div class="btn-group">
+				<a class="btn btn-fade" data-type="popbox" data-href="shoppingcar" >加入购物车</a>
+				<a class="btn" href="order.html">&nbsp;立即购买&nbsp;</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/swipeSlide.min.js" type="text/javascript"></script>
+<script src="js/sweetalert.min.js" type="text/javascript"></script>
+<script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/application.js" type="text/javascript"></script>
+<script>
+//选择尺码分类
+var standard = function(){
+	var standard1 = $(":radio[name=standard][checked]").val();
+	var standard2 = $(":radio[name=standard2][checked]").val();
+	$(".standardtext").html("已选择：'" + standard1 + "','" + standard2 + "'")
+}
+
+//购物车数量增加
+var addcart = function(){
+	$(".numberpro").addClass("number");
+	$(".numberpro").text($("#amount").val())
+}
+
+//评价
+function evaluatepage(){
+	if($(".evaluationpage").hasClass("active"))
+	{
+		$(".evaluationpage").removeClass("active");
+		$(".evaluationpage").removeAttr("style");
+	}else{
+		$(".evaluationpage").addClass("active");
+		$(".evaluationpage").css({
+			"display":"block",
+			"width":"100%",
+			"z-index":"101",
+			"height":$(window).height()+'px',
+			"top":"0"
+		});
+		$("body").css({"overflow":"hidden","height":$(window).height()+'px'});
+	}
+}
+
+
+$(function(){
+	$('.spinners').spinner({max:5});
+
+})
+</script>
+</body>
+</html>

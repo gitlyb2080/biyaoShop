@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/sweetalert.css" rel="stylesheet">
+<link href="css/application.css" rel="stylesheet">
+<title>设置商家信息</title>
+</head>
+<body>
+	<header>
+		<div class="headerbar">
+			<h1>设置商家信息</h1>
+			<a class="navbar-toggle" onclick="history.go(-1)">
+				<span class="icon-m_goback"></span>
+			</a>
+		</div>
+	</header>
+
+	<form class="form-phone">
+	<section class="wrapper cart">
+		<div class="shelves">
+			<div>
+				<label>微信账号</label>
+				<input type="text" class="forminput" placeholder="请输入微信账号">
+				<i class="icon-edit"></i>
+			</div>
+			<div>
+				<style>
+					.weichat:after{ content:" + 点击上传微信二维码";}
+				</style>
+				<div class="album">
+						<div class="album-old">
+							<div class="upload-btn btn-old weichat"><input type="file" name="" id="" accept="image/*"></div>
+							<div class="upload-img "></div>
+						</div>
+				</div>
+			</div>
+			<div>
+				<label>支付宝账号</label>
+				<input type="text" class="forminput" placeholder="请输入支付宝账号">
+				<i class="icon-edit"></i>
+			</div>
+			<div>
+				<style>
+					.alipay:after{ content:" + 点击上传支付宝二维码";}
+				</style>
+				<div class="album">
+						<div class="album-old">
+							<div class="upload-btn btn-old alipay"><input type="file" name="" id="" accept="image/*"></div>
+							<div class="upload-img "></div>
+						</div>
+				</div>
+			</div>
+			<div>
+				<a class="btn btn-block">保存</a>
+			</div>
+		</div>
+	</section>
+	</form>
+
+	<footer>
+		<div class="footheight"></div>
+		<div class="row footbar">
+			<a class="col-4 text-center" href="index.html" ><span class="icon-home"></span>首页</a>
+			<a class="col-4 text-center" href="cart.html" ><span class="icon-cart2"></span>购物车</a>
+			<a class="col-4 text-center active" href="profile.html" ><span class="icon-user2"></span>我的必要</a>
+		</div>
+	</footer>
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/swipeSlide.min.js" type="text/javascript"></script>
+<script src="js/sweetalert.min.js" type="text/javascript"></script>
+<script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
+<script src="js/icheck.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/application.js" type="text/javascript"></script>
+<script> 
+
+	//图片二维码上传，图片预览
+	$(function() {
+		var _w = 456;
+		var _h = 344;
+		var _old = {};
+
+		$(document).on("change",".upload-btn input",function() {
+			var _this = $(this);
+			var fr = new FileReader();
+			fr.readAsDataURL(this.files[0]);
+			var img = new Image();
+			var btn = _this.parent();
+			//btn.hide();
+			var upImg = btn.siblings(".upload-img");
+			upImg.addClass("loading");
+
+			fr.onload = function() {
+				img.src = this.result;
+				img.onload = function() {
+					btn.siblings(".upload-img").html(img);
+					var ratio = 1;
+					if (img.width > img.height) {
+						upImg.find("img").addClass("mh");
+						ratio = _h / img.height;
+					} else {
+						upImg.find("img").addClass("mw");
+						ratio = _w / img.width;
+					}
+
+					if (btn.hasClass("btn-old")) {
+					//	ajaxFileUpload("image_btn1", "#image1");
+						_old.img = img;
+						_old.scroll = scroll;
+						_old.ratio = ratio;
+					}
+
+					setTimeout(function() {
+						upImg.removeClass("loading").find("img").css("opacity", 1);
+					}, 1000);
+				}
+			}
+		});
+
+		function imageData(obj) {
+			obj.scroll.enabled = false;
+			var canvas = document.createElement('canvas');
+
+			canvas.width = _w;
+			canvas.height = _h;
+			var ctx = canvas.getContext('2d');
+
+			var w = _w / obj.scroll.scale / obj.ratio;
+			var h = _h / obj.scroll.scale / obj.ratio;
+			var x = Math.abs(obj.scroll.x) / obj.scroll.scale / obj.ratio;
+			var y = Math.abs(obj.scroll.y) / obj.scroll.scale / obj.ratio;
+
+			ctx.drawImage(obj.img, x, y, w, h, 0, 0, _w, _h);
+			return canvas.toDataURL();
+		}
+
+	});
+	</script>
+</body>
+</html>
